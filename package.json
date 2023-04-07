@@ -1,0 +1,22 @@
+{
+  "name": "14.-javascript---programacion-orientada-a-objetos",
+  "version": "1.0.0",
+  "description": "Gestion de Cuentas Corrientes del Banco Popular",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anexis19/Alura_Programacion_Orientada_Objetos.git"
+  },
+  "author": "Andres Hurtado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anexis19/Alura_Programacion_Orientada_Objetos/issues"
+  },
+  "homepage": "https://github.com/Anexis19/Alura_Programacion_Orientada_Objetos#readme",
+  "type":"module"
+
+}
+
