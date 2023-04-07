@@ -2,6 +2,8 @@
 // Importacion de clases
 import {cuentaCorriente} from './CuentaCorriente.js';
 import {cliente} from './Cliente.js';
+import { cuentaAhorro } from './CuentaAhorro.js';
+import { cuenta } from './cuenta.js';
 
 // Creacion de Objeto CLIENTE
 const cliente1 = new cliente("Andres", "12312","12345");
@@ -70,7 +72,17 @@ saldo = cuentaCorriente1.depositoEnCuenta(6000);
     // Actualiza el valor almacenado luego de la transaccion
     saldo2 = cuentaCorriente2.verSaldo();
     console.log("El saldo actual es: "+saldo2);
-*/
+
 console.log("Impresion de datos de un cliente1 mediante metodo GET ",cuentaCorriente1.getCliente );
 console.log("Impresion de datos de un cliente2 mediante metodo GET ",cuentaCorriente2.getCliente );
 console.log("La cantidad de cuentas creadas es: ",cuentaCorriente.cantidadCuentas);
+console.log("======================================================================")
+*/
+// NUEVO MODULO
+
+// Creacion de instacia/objeto de una clase
+const cuentaAhorro1 = new cuentaAhorro(cliente1,"9985","Banco Popular",0);
+console.log("Impresion de cuenta corriente", cuentaCorriente1);
+console.log("Impresion de cuenta de ahorro", cuentaAhorro1);
+
+
