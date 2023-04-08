@@ -1,52 +1,20 @@
 import {cliente} from "./Cliente.js";
+import { cuenta } from "./cuenta.js";
 // Definicion de clase y exportacion de la misma
-export class cuentaCorriente{
-    // Atributos relacionados al cliente
-    #cliente;
-    // Atributos relacionados a la cuenta
-    #saldo;
-    numero;
-    agencia;
+export class cuentaCorriente extends cuenta{
+
     static cantidadCuentas = 0;
 
-    set setCliente(valor){
-
-        if(valor instanceof cliente){
-            this.#cliente = valor;
-        }
-
-
-    }
-    get getCliente(){
-        return this.#cliente;
-    }
 
     constructor(cliente,numero,agencia){
-        this.setCliente = cliente;
-        this.#saldo=0;
-        this.numero=numero;
-        this.agencia=agencia;
+        // Referencia a constructor de la clase padre
+        super(cliente,numero,agencia,0);
         cuentaCorriente.cantidadCuentas++;
     }
-
-    depositoEnCuenta(valor){
-        if(valor > 0){
-            this.#saldo += valor;
-        }
-        return this.#saldo;
-
-    }
+    // Se sobreescribe el metodo padre retirarDeCuenta
     retirarDeCuenta(valor){
-        if(valor <= this.#saldo){
-            this.#saldo -=valor;
-        }
-        return this.#saldo;
+        // Se sobreescribe el metodo padre PRIVADO retirarDeCuenta
+        super._retirarDeCuenta(valor,5);
     }
-    verSaldo(){
-        return this.#saldo;
-    }
-    transferirParaCuenta(valor,cuentaDestino){
-        this.retirarDeCuenta(valor);
-        cuentaDestino.depositoEnCuenta(valor);
-    }
+
 }
