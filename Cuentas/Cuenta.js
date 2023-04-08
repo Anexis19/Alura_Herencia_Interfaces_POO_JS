@@ -8,6 +8,10 @@ export class cuenta{
     algunos se pueden mantener como ocultos pero declararlos en el constructor
     */
     constructor(cliente, numero, agencia, saldo){
+        if (this.constructor == cuenta){
+            throw new Error("No se debe instanciar objetos de la clase Cuenta");
+        }
+
         this.numero = numero;
         this.agencia = agencia;
         this.#cliente = cliente;
@@ -21,9 +25,9 @@ export class cuenta{
         return this.#saldo;
 
     }
-    // Retiro de cuenta sin emplear comision
+    // Metodo abstracto
     retirarDeCuenta(valor){
-        _retirarDeCuenta(valor,0);
+        throw new Error("Se debe impelemntar metodo de retiro empleando comision");
     }
 
     _retirarDeCuenta(valor,comision){
